@@ -26,5 +26,12 @@ public class GenerateTokenRequestDTO {
 	public void setGateId(int gateId) {
 		this.gateId = gateId;
 	}
-
+	
+	public GenerateTokenRequestDTO(String vehicleNumber, VehicleType vehicleType, int gateId) {
+		super();
+		this.vehicleNumber = vehicleNumber;
+		this.vehicleType = vehicleType;
+		this.gateId = gateId;
+	}
+	
 }

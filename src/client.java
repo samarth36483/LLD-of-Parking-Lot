@@ -30,13 +30,13 @@ public class Client {
 	public static void main(String[] args) {
 		Client client = new Client();
 		ParkingLot parkingLot = client.initialisationService.initialise();
-		GenerateTokenRequestDTO requestDTO = new GenerateTokenRequestDTO();
-		requestDTO.setVehicleNumber("RJ36CA6636");
-		requestDTO.setVehicleType(VehicleType.FOUR_WHEELER);
-		requestDTO.setGateId(1);
+		GenerateTokenRequestDTO requestDTO = new GenerateTokenRequestDTO("RJ36CA6636", VehicleType.FOUR_WHEELER, 1);
+//		requestDTO.setVehicleNumber("RJ36CA6636");
+//		requestDTO.setVehicleType(VehicleType.FOUR_WHEELER);
+//		requestDTO.setGateId(1);
 		
 		GeneratedTokenResponseDTO responseDTO = client.tokenController.getToken(requestDTO);
-		System.out.println(responseDTO.getToken().getEntryTime());
+		System.out.println(responseDTO.getToken());
 //		//System.out.println(token.getId());
 //		System.out.println(token.getEntryTime());
 //		System.out.println(token.getParkingSpot().getId());

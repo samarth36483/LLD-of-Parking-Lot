@@ -32,5 +32,10 @@ public class Vehicle extends BaseModel {
 	public void setColor(String color) {
 		this.color = color;
 	}
+	
+	public Vehicle(String vehicleNumber, VehicleType vehicleType) {
+		this.vehicleNumber = vehicleNumber;
+		this.vehicleType = vehicleType;
+	}
 
 }

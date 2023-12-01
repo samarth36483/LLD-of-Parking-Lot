@@ -32,13 +32,10 @@ public class TokenService {
 		ParkingSpot spot = spotAllocationStrategy.getSpot(vehicleType, gate);
 		spot.setStatus(Status.OCCUPIED);
 		
-		Vehicle vehicle = new Vehicle();
-		vehicle.setVehicleNumber(vehicleNumber);
-		vehicle.setVehicleType(vehicleType);
 		Token token = new Token();
 		token.setEntryTime(LocalDateTime.now());
 		token.setParkingSpot(spot);
-		token.setVehicle(vehicle);
+		token.setVehicle(new Vehicle(vehicleNumber, vehicleType));
 		
 		return token;
 	}
