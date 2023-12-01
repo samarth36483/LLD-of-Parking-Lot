@@ -1,36 +1,52 @@
 package designParkingLot.models;
 
 import designParkingLot.models.enums.GateType;
+import designParkingLot.models.enums.Status;
 
 public class Gate extends BaseModel {
-	private String gateNumber;
-	private ParkingLot parkingLot;
-	private GateType type;
-	private Operator currentOperator;
+	private int gateNumber;
+	//private Operator operator;
+	private String operator;
+	private Status status;
+	private int floorNumber;
+	private GateType gateType;
+	private int parkingLotId;
 	
-	public String getGateNumber() {
+	public int getGateNumber() {
 		return gateNumber;
 	}
-	public void setGateNumber(String gateNumber) {
+	public void setGateNumber(int gateNumber) {
 		this.gateNumber = gateNumber;
 	}
-	public ParkingLot getParkingLot() {
-		return parkingLot;
+	public String getOperator() {
+		return operator;
 	}
-	public void setParkingLot(ParkingLot parkingLot) {
-		this.parkingLot = parkingLot;
+	public void setOperator(String operator) {
+		this.operator = operator;
 	}
-	public GateType getType() {
-		return type;
+	public Status getStatus() {
+		return status;
 	}
-	public void setType(GateType type) {
-		this.type = type;
+	public void setStatus(Status status) {
+		this.status = status;
 	}
-	public Operator getOperator() {
-		return currentOperator;
+	public int getFloorNumber() {
+		return floorNumber;
 	}
-	public void setOperator(Operator operator) {
-		this.currentOperator = operator;
+	public void setFloorNumber(int floorNumber) {
+		this.floorNumber = floorNumber;
+	}
+	public GateType getGateType() {
+		return gateType;
+	}
+	public void setGateType(GateType gateType) {
+		this.gateType = gateType;
+	}
+	public int getParkingLotId() {
+		return parkingLotId;
+	}
+	public void setParkingLotId(int parkingLotId) {
+		this.parkingLotId = parkingLotId;
 	}
 
 }

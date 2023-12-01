@@ -1,40 +1,30 @@
 package designParkingLot.models;
 
-import java.util.Date;
-import java.util.List;
+import java.time.LocalDateTime;
 
 public class Bill extends BaseModel {
-	private double fare;
-	private Ticket ticket;
-	private Date exitTime;
+	private int fare;
+	private LocalDateTime exitTime;
+	private Token token;
 	private Gate gate;
-	private Operator operator;
 	
-	private List<Payment> payments;
-	
-	public List<Payment> getPayments() {
-		return payments;
-	}
-	public void setPayments(List<Payment> payments) {
-		this.payments = payments;
-	}
-	public double getFare() {
+	public int getFare() {
 		return fare;
 	}
-	public void setFare(double fare) {
+	public void setFare(int fare) {
 		this.fare = fare;
 	}
-	public Ticket getTicket() {
-		return ticket;
-	}
-	public void setTicket(Ticket ticket) {
-		this.ticket = ticket;
-	}
-	public Date getExitTime() {
+	public LocalDateTime getExitTime() {
 		return exitTime;
 	}
-	public void setExitTime(Date exitTime) {
+	public void setExitTime(LocalDateTime exitTime) {
 		this.exitTime = exitTime;
+	}
+	public Token getToken() {
+		return token;
+	}
+	public void setToken(Token token) {
+		this.token = token;
 	}
 	public Gate getGate() {
 		return gate;
@@ -42,11 +32,6 @@ public class Bill extends BaseModel {
 	public void setGate(Gate gate) {
 		this.gate = gate;
 	}
-	public Operator getOperator() {
-		return operator;
-	}
-	public void setOperator(Operator operator) {
-		this.operator = operator;
-	}
+	
 
 }

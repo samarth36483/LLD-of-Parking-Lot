@@ -1,43 +1,35 @@
 package designParkingLot.models;
 
-import java.util.Date;
-
 public class Operator extends BaseModel {
-	private String name;
-	private String username;
-	private String password;
-	private Date shiftStart;
-	private Date shiftEnd;
+	private String Name;
+	private String email;
+	private String phoneNumber;
+	private String empId;
 	
 	public String getName() {
-		return name;
+		return Name;
 	}
 	public void setName(String name) {
-		this.name = name;
+		Name = name;
 	}
-	public String getUsername() {
-		return username;
+	public String getEmail() {
+		return email;
 	}
-	public void setUsername(String username) {
-		this.username = username;
+	public void setEmail(String email) {
+		this.email = email;
 	}
-	public String getPassword() {
-		return password;
+	public String getPhoneNumber() {
+		return phoneNumber;
 	}
-	public void setPassword(String password) {
-		this.password = password;
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
 	}
-	public Date getShiftStart() {
-		return shiftStart;
+	public String getEmpId() {
+		return empId;
 	}
-	public void setShiftStart(Date shiftStart) {
-		this.shiftStart = shiftStart;
+	public void setEmpId(String empId) {
+		this.empId = empId;
 	}
-	public Date getShiftEnd() {
-		return shiftEnd;
-	}
-	public void setShiftEnd(Date shiftEnd) {
-		this.shiftEnd = shiftEnd;
-	}
+	
 
 }

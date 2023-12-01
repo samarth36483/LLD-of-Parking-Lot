@@ -1,6 +1,8 @@
 package designParkingLot.models.enums;
 
 public enum VehicleType {
-	LIGHT, MEDIUM, HEAVY;
+	TWO_WHEELER, 
+	FOUR_WHEELER, 
+	ELECTRIC_VEHICLES;
 
 }
