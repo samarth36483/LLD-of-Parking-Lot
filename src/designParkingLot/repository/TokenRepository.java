@@ -17,7 +17,7 @@ public class TokenRepository {
         Token token  = tokenMap.get(TokenId);
         if(token == null){
             throw new TokenNotFoundException("Token not found for : "
-                    + token);
+                    + TokenId);
         }
         return token;
     }

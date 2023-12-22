@@ -25,5 +25,9 @@ public class Token extends BaseModel {
 	public void setParkingSpot(ParkingSpot parkingSpot) {
 		this.parkingSpot = parkingSpot;
 	}
+	@Override
+	public String toString() {
+		return "Token -> entryTime = " + entryTime + ", " + vehicle.toString() + ", " + parkingSpot.toString();
+	}
 	
 }

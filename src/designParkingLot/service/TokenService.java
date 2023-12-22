@@ -25,7 +25,7 @@ public class TokenService {
 		this.parkingLotRepository = parkingLotRepository;
 		this.gateRepository = gateRepository;
 	}
-	
+	int i = 0;
 	public Token getToken(String vehicleNumber, VehicleType vehicleType, int gateId) {
 		Gate gate = gateRepository.get(gateId);
 		SpotAllocationStrategy spotAllocationStrategy = SpotAllocationFactory.getSpotAllocationStrategy(parkingLotRepository);
@@ -33,9 +33,11 @@ public class TokenService {
 		spot.setStatus(Status.OCCUPIED);
 		
 		Token token = new Token();
+		token.setId(i++);
 		token.setEntryTime(LocalDateTime.now());
 		token.setParkingSpot(spot);
 		token.setVehicle(new Vehicle(vehicleNumber, vehicleType));
+		tokenRepository.put(token);
 		
 		return token;
 	}

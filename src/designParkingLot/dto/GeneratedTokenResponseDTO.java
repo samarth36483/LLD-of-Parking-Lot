@@ -25,5 +25,10 @@ public class GeneratedTokenResponseDTO {
 	public void setStatus(ResponseStatus status) {
 		this.status = status;
 	}
+	@Override
+	public String toString() {
+		return "GeneratedTokenResponseDTO [token=" + token + ", message=" + message + ", status=" + status + "]";
+	}
+	
 	
 }

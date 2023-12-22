@@ -31,18 +31,25 @@ public class Client {
 		Client client = new Client();
 		ParkingLot parkingLot = client.initialisationService.initialise();
 		GenerateTokenRequestDTO requestDTO = new GenerateTokenRequestDTO("RJ36CA6636", VehicleType.FOUR_WHEELER, 1);
-//		requestDTO.setVehicleNumber("RJ36CA6636");
-//		requestDTO.setVehicleType(VehicleType.FOUR_WHEELER);
-//		requestDTO.setGateId(1);
 		
 		GeneratedTokenResponseDTO responseDTO = client.tokenController.getToken(requestDTO);
-		System.out.println(responseDTO.getToken());
-//		//System.out.println(token.getId());
-//		System.out.println(token.getEntryTime());
-//		System.out.println(token.getParkingSpot().getId());
-//		System.out.println(token.getParkingSpot().getNumber());
-//		System.out.println(token.getVehicle().getVehicleNumber());
-//		System.out.println(token.getVehicle().getVehicleType());
+		System.out.println(responseDTO.getToken().toString());
+		System.out.println(responseDTO.getMessage());
+		System.out.println(responseDTO.getStatus());
+		
+		GenerateTokenRequestDTO requestDTO1 = new GenerateTokenRequestDTO("RJ19CA0666", VehicleType.TWO_WHEELER, 1);
+		
+		GeneratedTokenResponseDTO responseDTO1 = client.tokenController.getToken(requestDTO1);
+		System.out.println(responseDTO1.getToken().toString());
+		System.out.println(responseDTO1.getMessage());
+		System.out.println(responseDTO1.getStatus());
+		
+		GenerateTokenRequestDTO requestDTO2 = new GenerateTokenRequestDTO("RJ20CA1234", VehicleType.FOUR_WHEELER, 1);
+		
+		GeneratedTokenResponseDTO responseDTO2 = client.tokenController.getToken(requestDTO2);
+		System.out.println(responseDTO2.getToken().toString());
+		System.out.println(responseDTO2.getMessage());
+		System.out.println(responseDTO2.getStatus());
 	}
 
 }

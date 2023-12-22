@@ -26,7 +26,6 @@ public class InitialisationService {
 	public InitialisationService(ParkingLotRepository parkingLotRepository,
 			ParkingFloorRepository parkingFloorRepository, ParkingSpotRepository parkingSpotRepository,
 			GateRepository gateRepository) {
-		super();
 		this.parkingLotRepository = parkingLotRepository;
 		this.parkingFloorRepository = parkingFloorRepository;
 		this.parkingSpotRepository = parkingSpotRepository;
@@ -47,28 +46,32 @@ public class InitialisationService {
 		// add list of gates
 		List<ParkingFloor> parkingFloors = new ArrayList<>();
 		
-		for(int i=1; i<=10; i++) {
+		for(int i=0; i<5; i++) {
 			ParkingFloor parkingFloor = new ParkingFloor();
-			parkingFloor.setFloorNumber(i);
-			parkingFloor.setId(i);
+			parkingFloor.setFloorNumber(i+1);
+			parkingFloor.setId(i+1);
+			parkingFloors.add(parkingFloor);
+			parkingFloorRepository.put(parkingFloor);
+		}
+		for(int i=0; i<parkingFloors.size(); i++) {
+			ParkingFloor parkingFloor = parkingFloors.get(i);
 			List<ParkingSpot> parkingSpots = new ArrayList<>();
-			for(int j=1; j<=100; j++) {
+			for(int j=0; j<10; j++) {
 				ParkingSpot spot = new ParkingSpot();
-				spot.setId(i*10);
-				spot.setNumber(i);
-				spot.setStatus(Status.ACTIVE);
-				if(i<=50) {
+				spot.setId(j+1);
+				spot.setNumber(j+1);
+				spot.setStatus(Status.AVAILABLE);
+				if(j<5) {
 					spot.setVehicleType(VehicleType.TWO_WHEELER);
 				}
 				else {
 					spot.setVehicleType(VehicleType.FOUR_WHEELER);
 				}
-				parkingSpots.add(spot);
 				parkingSpotRepository.put(spot);
+				parkingSpots.add(spot);
 			}
 			parkingFloor.setParkingSpots(parkingSpots);
 			parkingFloorRepository.put(parkingFloor);
-			parkingFloors.add(parkingFloor);
 		}
 		parkingLot.setParkingFloors(parkingFloors);
 		
@@ -78,6 +81,7 @@ public class InitialisationService {
 		entryGate.setId(1);
 		entryGate.setOperator("Ram Kumar");
 		entryGate.setStatus(Status.ACTIVE);
+		entryGate.setParkingLotId(1);
 		
 		Gate exitGate = new Gate();
 		exitGate.setGateNumber(2);
@@ -85,6 +89,7 @@ public class InitialisationService {
 		exitGate.setId(2);
 		exitGate.setOperator("Shyam Kumar");
 		exitGate.setStatus(Status.ACTIVE);
+		exitGate.setParkingLotId(1);
 		
 		gateRepository.put(entryGate);
 		gateRepository.put(exitGate);

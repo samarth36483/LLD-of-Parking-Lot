@@ -37,5 +37,10 @@ public class Vehicle extends BaseModel {
 		this.vehicleNumber = vehicleNumber;
 		this.vehicleType = vehicleType;
 	}
+	@Override
+	public String toString() {
+		return "VehicleNumber = " + vehicleNumber + ", vehicleType = "
+				+ vehicleType;
+	}
 
 }
